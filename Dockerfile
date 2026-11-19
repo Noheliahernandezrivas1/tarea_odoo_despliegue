@@ -11,7 +11,7 @@ COPY ./odoo.conf /etc/odoo/odoo.conf
 
 RUN chown -R odoo:odoo /mnt/extra-addons /etc/odoo/odoo.conf
 
+
 USER odoo
 
-CMD ["sh", "-c", "psql -h ep-lucky-morning-bb41rsxr.c-15.us-east-1.aws.
-neon.tech -p 5432 -U neondb_owner -d neondb -c \"DELETE FROM ir_attachment WHERE url LIKE '/web/assets/%';\" || true; exec odoo -c /etc/odoo/odoo.conf -d neondb -i base,ventas_unicah --without-demo=all"]
+CMD ["sh", "-c", "psql -h ep-lucky-morning-bb41rsxr.c-15.us-east-1.aws.neon.tech -p 5432 -U neondb_owner -d neondb -c \"DELETE FROM ir_attachment WHERE url LIKE '/web/assets/%';\" || true; exec odoo -c /etc/odoo/odoo.conf -d neondb -i base,ventas_unicah --without-demo=all"]
